@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Widyatama Games</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      min-height:100vh;
+      /* Background logo Universitas Widyatama */
+      background: linear-gradient(rgba(220, 142, 18, 0.85), rgba(255,255,255,0.85)),
+                  url('widyatama.webp');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Konten utama */
+    .content {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .content h1 {
+      font-size: 42px;
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Area Apps (tanpa kotak) */
+    .apps-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .apps-button {
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #250fb6, #250fb6);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 30px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .apps-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    /* Dropdown Apps */
+    .apps-list {
+      margin-top: 15px;
+      display: none;
+      animation: dropdown 0.3s ease;
+    }
+
+    .apps-list a {
+      display: block;
+      margin: 8px auto;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #0d47a1;
+      background-color: rgba(227,242,253,0.9);
+      border-radius: 20px;
+      width: fit-content;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .apps-list a:hover {
+      background-color: #bbdefb;
+      transform: scale(1.05);
+    }
+
+    @keyframes dropdown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Widyatama Games 🎮</h1>
+    <p>
+      Website ini berisi berbagai aplikasi dan permainan sederhana yang dapat dimainkan
+      secara online.
+    </p>
+
+    <div class="apps-container">
+      <button class="apps-button" onclick="toggleApps()"> Apps</button>
+      <div class="apps-list" id="appsList">
+        <a href="games/bounce-ball">🎲 Bounce Ball 1</a>
+        <a href="#">🎲 Game 2</a>
+        <a href="#">🎲 Game 3</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleApps() {
+      const apps = document.getElementById('appsList');
+      apps.style.display = apps.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
